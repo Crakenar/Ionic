@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Réserver {{ selectedPlace.title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" padding>
+  <p>{{ selectedPlace.description }}</p>
+  <p>{{ selectedPlace.price }} &euro;</p>
+
+  <ion-item>
+    <ion-label>Date Debut  DD MM YY</ion-label>
+    <ion-datetime displayFormat="DD MM YY" [(ngModel)]="myDateDepart" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date Fin DD MM YY</ion-label>
+    <ion-datetime displayFormat="DD MM YY" [(ngModel)]="myDateFin" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-button color="primary" [disabled]="confirm" (click)="onBookPlace()">Réserver</ion-button>
+  <ion-button color="primary" [disabled]="!confirm" (click)="confirmer()">Confirmer</ion-button>
+
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/places/tabs/discover"></ion-back-button>
+        </ion-buttons>
+        <ion-title *ngIf="this.place !== undefined">{{ place.title }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+    <div *ngIf="this.place !== undefined">
+        <ion-title>{{ place.title }}</ion-title>
+        <ion-label>{{ place.description }}</ion-label>
+        <ion-label>{{ place.price }}</ion-label>
+    </div>
+    <ion-button color="primary" margin (click)="onBookPlace()">Réserver</ion-button>
+</ion-content>
